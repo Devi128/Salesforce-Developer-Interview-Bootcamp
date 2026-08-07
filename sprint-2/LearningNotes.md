@@ -1,60 +1,20 @@
-# Day 2 - Apex Triggers & Governor Limits
+# Salesforce Bootcamp Day 2 Assignment – Apex Triggers & Governor Limits
 
-## Project
+## Architectural Decisions
 
-Placement Management System
+### 1. Why Apex Trigger?
+Apex was chosen over declarative solutions because the scenario requires multi-object cross-record validation (comparing `Student__c.CGPA__c` against `Job__c.Minimum_CGPA__c`) along with querying existing database records to enforce composite uniqueness (`Student__c` + `Job__c`) in a single execution context.
 
-## Objective
+### 2. Why Before Insert?
+- **Validation:** Calling `addError()` during `before insert` stops invalid records from saving to the database without consuming DML operations.
+- **Defaulting Values:** Direct field mutations (`app.Status__c = 'Applied'`) inside a `before insert` context auto-persist without requiring additional `update` DML calls.
 
-Implement business automation using Apex Triggers and understand
-how Salesforce Governor Limits influence Apex development.
+### 3. Bulkification Strategy
+- **Zero SOQL/DML in Loops:** All SOQL queries run outside loops using `IN` clause binding.
+- **Set Data Structures:** `Set<Id>` collects parent keys; `Set<String>` tracks unique composite keys (`StudentId-JobId`) for duplicate identification across database records and in-batch duplicates.
+- **Map Lookups:** Extracted `Student__c` and `Job__c` records into `Map<Id, SObject>` for fast $O(1)$ record retrieval inside the loop.
 
----
-
-# What I Learned
-
-## 1. Apex Trigger
-
-An Apex Trigger is Apex code that executes automatically when
-specific changes occur to Salesforce records.
-
-A trigger can execute during events such as:
-
-- Before Insert
-- Before Update
-- After Insert
-- After Update
-- Before Delete
-- After Delete
-
----
-
-# 2. Before Trigger
-
-A Before Trigger is useful when we want to modify or validate
-records before they are saved.
-
-In our Placement Management System, we used a Before Insert
-trigger to:
-
-- Prevent duplicate applications
-- Validate CGPA
-- Validate application deadline
-- Set the default Application Status
-
----
-
-# 3. After Trigger
-
-An After Trigger is useful when we need to perform actions after
-the record has been saved.
-
-We used an After Update trigger to detect when an application
-becomes `Selected`.
-
-When an application is selected:
-
-```text
-Application Status = Selected
-             ↓
-Student.Placed__c = true
+## Key Learnings
+1. **Governor Limits Awareness:** Always write code expecting batches of up to 200–10,000 records.
+2. **Trigger Handler Architecture:** Keep triggers lean by delegating execution flow to Handler and Service classes (`Trigger` → `Handler` → `Service`).
+3. **Data Structure Power:** Combining `Set` and `Map` collections enables efficient $O(N)$ data processing while adhering strictly to execution limits.
