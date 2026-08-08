@@ -1,0 +1,84 @@
+<template>
+
+    <lightning-card title="Placement Portal">
+
+        <div class="slds-p-around_medium">
+
+            <!-- Welcome -->
+            <h1 class="slds-text-heading_large">
+                Welcome to Vishnu Placement Portal
+            </h1>
+
+            <br />
+
+            <!-- Student Details -->
+            <h2 class="slds-text-heading_medium">
+                Student Details
+            </h2>
+
+            <p>
+                <strong>Student Name:</strong> {studentName}
+            </p>
+
+            <p>
+                <strong>Roll Number:</strong> {rollNumber}
+            </p>
+
+            <p>
+                <strong>Department:</strong> {department}
+            </p>
+
+            <br />
+
+            <!-- Placement Information -->
+            <h2 class="slds-text-heading_medium">
+                Placement Information
+            </h2>
+
+            <p>
+                <strong>Today's Date:</strong> {todayDate}
+            </p>
+
+            <p>
+                <strong>Welcome Student:</strong> {studentName}
+            </p>
+
+            <p>
+                <strong>Number of Companies:</strong> {numberOfCompanies}
+            </p>
+
+            <p>
+                <strong>Number of Jobs:</strong> {numberOfJobs}
+            </p>
+
+            <p>
+                <strong>Applications Submitted:</strong> {applicationsSubmitted}
+            </p>
+
+            <br />
+
+            <!-- Welcome Button -->
+            <lightning-button
+                label="Show Welcome Message"
+                onclick={showWelcome}>
+            </lightning-button>
+
+            <p>{welcomeMessage}</p>
+
+            <br />
+
+            <!-- Application Status -->
+            <lightning-button
+                label="Apply"
+                onclick={applyStatus}>
+            </lightning-button>
+
+            <p>
+                <strong>Status:</strong> {status}
+            </p>
+
+        </div>
+
+    </lightning-card>
+
+</template>
