@@ -1,4 +1,5 @@
 # Salesforce Interview Readiness Bootcamp – Day 4
+
 ## Building Your First Lightning Web Component (LWC)
 
 ## Overview
@@ -7,10 +8,10 @@ Day 4 focused on building the **user interface layer** of the Placement Manageme
 
 Until Day 3, the project mainly focused on the backend, including:
 
-- Data Model
-- SOQL Queries
-- Apex Triggers
-- Business Rules
+* Data Model
+* SOQL Queries
+* Apex Triggers
+* Business Rules
 
 In Day 4, the focus shifted to the frontend by creating a reusable Lightning Web Component and understanding how the UI will eventually communicate with Apex.
 
@@ -20,15 +21,15 @@ In Day 4, the focus shifted to the frontend by creating a reusable Lightning Web
 
 By completing Day 4, I learned how to:
 
-- Explain what Lightning Web Components are.
-- Create my first LWC.
-- Understand the structure of an LWC.
-- Deploy an LWC to a Lightning Page.
-- Use basic data binding.
-- Handle button click events.
-- Use JavaScript to manage component behaviour.
-- Understand how LWC can communicate with Apex.
-- Build the first UI screen of the Placement Management System.
+* Explain what Lightning Web Components are.
+* Create my first LWC.
+* Understand the structure of an LWC.
+* Deploy an LWC to a Lightning Page.
+* Use basic data binding.
+* Handle button click events.
+* Use JavaScript to manage component behaviour.
+* Understand how LWC can communicate with Apex.
+* Build the first UI screen of the Placement Management System.
 
 ---
 
@@ -36,9 +37,9 @@ By completing Day 4, I learned how to:
 
 **Lightning Web Components (LWC)** is Salesforce's modern UI framework for building reusable and maintainable user interfaces using standard web technologies such as:
 
-- HTML
-- JavaScript
-- CSS
+* HTML
+* JavaScript
+* CSS
 
 LWC is based on modern web standards and allows developers to create fast, reusable, and maintainable Salesforce user interfaces.
 
@@ -62,23 +63,37 @@ SOQL / DML
  │
  ▼
 Salesforce Database
-```text
+```
+
+---
 
 ## LWC Structure
-### A Lightning Web Component consists of three important file:
-### Example : 
+
+A Lightning Web Component consists of three important files.
+
+### Example
+
+```text
 placementHome/
 │
 ├── placementHome.html
 ├── placementHome.js
 └── placementHome.js-meta.xml
+```
 
-## placementHome.html
-Responsible for the user interface.
-##placementHome.js
-Responsible for the component's logic.
-##placementHome.js-meta.xml
-Responsible for component configuration.
+### placementHome.html
+
+Responsible for the user interface, including the layout, text, buttons, and other UI elements.
+
+### placementHome.js
+
+Responsible for the component's logic, variables, events, and behaviour.
+
+### placementHome.js-meta.xml
+
+Responsible for the component configuration and defining where the component can be used in Salesforce.
+
+---
 
 ## Activities Completed
 
@@ -98,16 +113,17 @@ The component was deployed and added to a Lightning Page.
 
 Created variables for:
 
-- Student Name
-- Roll Number
-- Department
+* Student Name
+* Roll Number
+* Department
 
 Example:
 
 ```text
 Student Name : Devi
-Roll Number  : 23pa1a0540
+Roll Number  : 23PA1A0540
 Department   : CSE
+```
 
 ### 3. Implemented Button Click
 
@@ -147,7 +163,17 @@ Welcome Student
 Number of Companies : 25
 Number of Jobs : 63
 Applications Submitted : 5
+```
 
+The values were hard-coded for this activity.
+
+---
+
+## LWC and Apex
+
+LWC is responsible for the user interface and client-side behaviour.
+
+Apex is used for server-side processing, business logic, SOQL queries, and DML operations.
 
 The future architecture will be:
 
@@ -168,6 +194,8 @@ Salesforce Database
 ```
 
 Currently, the Placement Portal uses hard-coded values. In future development, these values will be retrieved dynamically from Salesforce using Apex.
+
+---
 
 ## Repository Structure
 
@@ -193,6 +221,8 @@ Day-4-LWC/
     └── placement-portal.png
 ```
 
+---
+
 ## Technologies Used
 
 * Salesforce
@@ -204,15 +234,19 @@ Day-4-LWC/
 * VS Code
 * Salesforce CLI
 
+---
+
 ## Future Enhancements
 
-* Connect LWC with Apex
-* Retrieve real Salesforce data
-* Display actual company, job, and application counts
-* Display student-specific information
-* Add navigation to Jobs and Applications
-* Connect the UI with the existing Placement Management System business logic
-* Improve the Placement Portal UI
+* Connect LWC with Apex.
+* Retrieve real Salesforce data.
+* Display actual company, job, and application counts.
+* Display student-specific information.
+* Add navigation to Jobs and Applications.
+* Connect the UI with the existing Placement Management System business logic.
+* Improve the Placement Portal UI.
+
+---
 
 ## Conclusion
 
