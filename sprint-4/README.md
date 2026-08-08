@@ -62,7 +62,7 @@ SOQL / DML
  │
  ▼
 Salesforce Database
----
+```text
 
 ## LWC Structure
 ### A Lightning Web Component consists of three important file:
