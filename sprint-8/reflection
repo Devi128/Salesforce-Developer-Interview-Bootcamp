@@ -1,0 +1,45 @@
+# Day 8 – Reflection
+
+## What I Learned
+
+Day 8 helped me understand how Salesforce can handle work asynchronously instead of making users wait for every operation to finish.
+
+I learned the purpose and basic usage of:
+
+- Future Methods
+- Queueable Apex
+- Batch Apex
+- Scheduled Apex
+
+## Practical Experience
+
+I created and tested a Queueable Apex job for post-offer processing.
+
+I also created a Future Method to demonstrate asynchronous Application processing.
+
+For large datasets, I implemented Batch Apex and understood its Start, Execute, and Finish lifecycle.
+
+I also created Scheduled Apex to identify expired Job records and scheduled it to run at a specific time.
+
+## What I Improved
+
+I improved my understanding of how to choose an asynchronous solution based on the business requirement.
+
+I also learned how to monitor asynchronous jobs using Salesforce tools such as `AsyncApexJob` and `CronTrigger`.
+
+## Key Takeaway
+
+The most important lesson from Day 8 was that asynchronous Apex is not simply about running code in the background.
+
+The correct approach depends on the workload:
+
+- Work that can happen later → Future or Queueable
+- Structured background work → Queueable
+- Large datasets → Batch Apex
+- Time-based work → Scheduled Apex
+
+## Overall Reflection
+
+Day 8 gave me practical experience with asynchronous Apex and helped me understand how these technologies can be used in a real Placement Management System.
+
+I also learned that good Salesforce development requires choosing the right technology based on the business requirement rather than using a particular feature just because it is available.
