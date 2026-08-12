@@ -35,6 +35,7 @@ JavaScript
 Imperative Apex
     ↓
 Apex Controller
+```
 
 ##5. Parent and Child Components
 
@@ -66,6 +67,7 @@ jobCard
 Custom Event
     ↓
 eligibleJobs
+```
 
 
 The selected Job Id is sent to the parent.
@@ -95,7 +97,7 @@ Apply
 Submitting...
   ↓
 Success / Failure
-
+```
 
 This also helps prevent accidental repeated clicks.
 
@@ -134,6 +136,7 @@ Service Layer
 Business Rules
    ↓
 Salesforce Data
+```
 
 ##Key Takeaways
 -LWC separates presentation from component behavior.
