@@ -1,0 +1,11 @@
+SELECT Id,
+       JobType,
+       Status,
+       NumberOfErrors,
+       JobItemsProcessed,
+       TotalJobItems,
+       CreatedDate,
+       CompletedDate
+FROM AsyncApexJob
+ORDER BY CreatedDate DESC
+LIMIT 20
