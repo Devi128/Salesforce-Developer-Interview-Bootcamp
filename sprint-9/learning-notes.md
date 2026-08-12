@@ -35,6 +35,7 @@ JavaScript
 Imperative Apex
     ↓
 Apex Controller
+
 ##5. Parent and Child Components
 
 Large interfaces can be divided into smaller components based on responsibility.
@@ -66,6 +67,7 @@ Custom Event
     ↓
 eligibleJobs
 
+
 The selected Job Id is sent to the parent.
 
 ##8. Business Logic and UI
@@ -93,6 +95,7 @@ Apply
 Submitting...
   ↓
 Success / Failure
+
 
 This also helps prevent accidental repeated clicks.
 
@@ -131,6 +134,7 @@ Service Layer
 Business Rules
    ↓
 Salesforce Data
+
 ##Key Takeaways
 -LWC separates presentation from component behavior.
 -@wire is useful for reactive data retrieval.
