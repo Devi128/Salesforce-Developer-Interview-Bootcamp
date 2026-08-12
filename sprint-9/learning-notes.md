@@ -1,26 +1,26 @@
-#Learning Notes – Sprint 09: Lightning Web Components
-##1. Lightning Web Components
+# Learning Notes – Sprint 09: Lightning Web Components
+## 1. Lightning Web Components
 
 Lightning Web Components (LWC) are used to build interactive user interfaces in Salesforce.
 
 An LWC mainly contains:
 
--HTML for the user interface
--JavaScript for component behavior
--XML metadata for component configuration
-##2. Data Binding
+- HTML for the user interface
+- JavaScript for component behavior
+- XML metadata for component configuration
+## 2. Data Binding
 
 Data binding allows JavaScript properties to be displayed in the HTML template.
 
 For example, job information retrieved from Apex can be displayed in the component.
 
-##3. Wire Service
+## 3. Wire Service
 
 The @wire service is useful for retrieving reactive data.
 
 In the Eligible Jobs component, @wire is used to retrieve the eligible jobs for a student.
 
-##4. Imperative Apex
+## 4. Imperative Apex
 
 Imperative Apex is useful when an Apex method should execute because of a specific user action.
 
@@ -37,25 +37,26 @@ Imperative Apex
 Apex Controller
 ```
 
-##5. Parent and Child Components
+## 5. Parent and Child Components
 
 Large interfaces can be divided into smaller components based on responsibility.
 
 In this sprint:
-
+```text
 eligibleJobs
     |
     └── jobCard
+```
 
 The parent manages the overall job list, while the child displays an individual job.
 
-##6. Parent-to-Child Communication
+## 6. Parent-to-Child Communication
 
 The parent passes job information to the child component using @api.
 
 This allows each jobCard to receive the job that it needs to display.
 
-##7. Child-to-Parent Communication
+## 7. Child-to-Parent Communication
 
 A child component can communicate with its parent using Custom Events.
 
@@ -72,7 +73,7 @@ eligibleJobs
 
 The selected Job Id is sent to the parent.
 
-##8. Business Logic and UI
+## 8. Business Logic and UI
 
 Business rules should not be duplicated in JavaScript.
 
@@ -80,13 +81,13 @@ The LWC requests the application, while the Apex business layer decides whether 
 
 Existing rules such as:
 
--Duplicate application prevention
--CGPA validation
--Application deadline validation
+- Duplicate application prevention
+- CGPA validation
+- Application deadline validation
 
 remain in the backend.
 
-##9. Loading and Processing States
+## 9. Loading and Processing States
 
 A good interface should communicate what is happening.
 
@@ -101,7 +102,7 @@ Success / Failure
 
 This also helps prevent accidental repeated clicks.
 
-##10. Success and Error Handling
+## 10. Success and Error Handling
 
 Every user action should have a clear result.
 
@@ -111,13 +112,13 @@ Application submitted successfully.
 
 If the application fails, the component displays an error message instead of leaving the user without feedback.
 
-##11. Refreshing Data
+## 11. Refreshing Data
 
 After a successful application, the data displayed on the screen may become outdated.
 
 Refreshing the wired data helps keep the interface synchronized with the Salesforce data.
 
-##12. Complete Application Flow
+## 12. Complete Application Flow
 
 The complete flow learned in this sprint is:
 ```text
@@ -138,10 +139,10 @@ Business Rules
 Salesforce Data
 ```
 
-##Key Takeaways
--LWC separates presentation from component behavior.
--@wire is useful for reactive data retrieval.
--Imperative Apex is useful for user-initiated actions.
+## Key Takeaways
+- LWC separates presentation from component behavior.
+- @wire is useful for reactive data retrieval.
+- Imperative Apex is useful for user-initiated actions.
 -@api supports parent-to-child communication.
 -Custom Events support child-to-parent communication.
 -Business rules should remain in the backend.
