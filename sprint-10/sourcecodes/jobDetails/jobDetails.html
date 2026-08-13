@@ -1,0 +1,16 @@
+<template>
+    <lightning-card title="Job Details">
+        <template if:true={job}>
+            <div class="slds-p-around_medium">
+                <p><strong>Job:</strong> {job.Name}</p>
+                <p><strong>Minimum CGPA:</strong> {job.Minimum_CGPA__c}</p>
+                <p><strong>Last Date:</strong> {job.Last_Date__c}</p>
+            </div>
+        </template>
+        <template if:true={selectedJob}>
+            <c-job-details
+                job={selectedJob}>
+            </c-job-details>
+</template>
+    </lightning-card>
+</template>
