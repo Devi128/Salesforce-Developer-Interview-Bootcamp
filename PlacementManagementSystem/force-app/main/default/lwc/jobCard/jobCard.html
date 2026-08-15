@@ -1,0 +1,25 @@
+<template>
+    <div class="job-card slds-p-around_medium">
+
+        <h2>{job.Name}</h2>
+
+        <p>Minimum CGPA: {job.Minimum_CGPA__c}</p>
+
+        <p>Last Date: {job.Last_Date__c}</p>
+
+        <lightning-button
+            label={buttonLabel}
+            variant="brand"
+            data-job-id={job.Id}
+            onclick={handleApply}
+            disabled={isSubmitting}>
+        </lightning-button>
+        <lightning-button
+            label="View Details"
+            variant="neutral"
+            data-job-id={job.Id}
+            onclick={handleViewDetails}>
+        </lightning-button>        
+
+    </div>
+</template>

@@ -1,0 +1,27 @@
+<template>
+    <lightning-card title="Student Records">
+
+        <template if:true={students.data}>
+            <template for:each={students.data} for:item="student">
+
+                <div key={student.Id} class="slds-p-around_small">
+
+                    <p>
+                        <strong>{student.Name}</strong>
+                    </p>
+
+                    <p>
+                        CGPA: {student.CGPA__c}
+                    </p>
+
+                </div>
+
+            </template>
+        </template>
+
+        <template if:true={students.error}>
+            <p>Error loading records.</p>
+        </template>
+
+    </lightning-card>
+</template>

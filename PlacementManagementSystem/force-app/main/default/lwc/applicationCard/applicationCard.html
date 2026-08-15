@@ -1,0 +1,21 @@
+<template>
+
+    <div class="slds-box slds-m-bottom_small">
+
+        <p>
+            <strong>Job:</strong> {application.Job__r.Name}
+        </p>
+
+        <p>
+            <strong>Status:</strong>
+
+            <c-status-badge
+                label={application.Status__c}
+                status={application.Status__c}>
+            </c-status-badge>
+
+        </p>
+
+    </div>
+
+</template>
